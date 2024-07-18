@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Physics Quantities Calculator</title>
+    <meta charset="UTF-8" />
+    <title>Physics Quantities Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>물리량계산기</h1>
+
+    <div>
+      <input type="radio" id="momentum-calculator" name="calculator" value="momentum" />
+      <label for="momentum-calculator">운동량계산기</label>
+      <input type="radio" id="impulse-calculator" name="calculator" value="impulse" />
+      <label for="impulse-calculator">충격량계산기</label>
+      <input type="radio" id="collision-calculator" name="calculator" value="collision" />
+      <label for="collision-calculator">충돌계산기</label>
+    </div>
+
+    <div id="momentum-calculator-container" class="calculator active">
+      <h2>운동량계산기</h2>
+      <label for="mass">질량 (kg):</label>
+      <input type="number" id="mass" name="mass" required />
+      <label for="velocity">속도 (m/s):</label>
+      <input type="number" id="velocity" name="velocity" required />
+      <button id="calculateMomentum">운동량 계산하기</button>
+      <p id="momentumResult"></p>
+    </div>
+
+    <div id="impulse-calculator-container" class="calculator">
+      <h2>충격량계산기</h2>
+      <label for="force">힘 (N):</label>
+      <input type="number" id="force" name="force" required />
+      <label for="time">시간 (s):</label>
+      <input type="number" id="time" name="time" required />
+      <button id="calculateImpulse">충격량 계산</button>
+      <p id="impulseResult"></p>
+    </div>
+
+    <div id="collision-calculator-container" class="calculator">
+      <h2>충돌 계산기</h2>
+      <label for="mass1">물체 1 질량 (kg):</label>
+      <input type="number" id="mass1" name="mass1" required />
+      <label for="velocity1">물체 1 속도 (m/s):</label>
+      <input type="number" id="velocity1" name="velocity1" required />
+      <br />
+      <label for="mass2">물체 2 질량 (kg):</label>
+      <input type="number" id="mass2" name="mass2" required />
+      <label for="velocity2">물체 2 속도 (m/s):</label>
+      <input type="number" id="velocity2" name="velocity2" required />
+      <br />
+      <button id="calculateCollision">충돌 계산</button>
+      <p id="collisionResultMomentum"></p>
+      <p id="collisionResultVelocity"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
