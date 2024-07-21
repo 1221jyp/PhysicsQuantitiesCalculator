@@ -89,4 +89,17 @@ function calculateCollision() {
 }
 
 // 충돌 계산 버튼 클릭 이벤트 리스너 추가
-document.getElementById("calculateCollision").addEventListener("click", calculateCollision);
+// 두 물쳉의 속도 방향이 서로 다른지 확인
+
+document.getElementById("calculateCollision").addEventListener("click", function () {
+  const velocity1 = parseFloat(document.getElementById("velocity1").value);
+  const velocity2 = parseFloat(document.getElementById("velocity2").value);
+
+  // 두 속도의 부호가 같은지 확인
+  if ((velocity1 > 0 && velocity2 > 0) || (velocity1 < 0 && velocity2 < 0)) {
+    alert("두 물체의 속도 방향이 서로 달라야 합니다. 다시 입력해주세요.");
+    return; // 계산 중단
+  }
+
+  calculateCollision();
+});
